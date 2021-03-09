@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include <Wire.h>
 #include <DS1302.h>
+#include <ThaiChar.h>
 
 DS1302 rtc(8, 7, 6);
 
@@ -10,7 +11,6 @@ const int D4 = 5;
 const int D5 = 4;
 const int D6 = 3;
 const int D7 = 2;
-
 
 bool bFourBitMode = false;
 char ReadSendState = -1;
@@ -22,127 +22,6 @@ int m_0 = 3;
 int s_1 = 4;
 int s_0 = 5;
 
-unsigned char Thai_0[8] =
-{
-	0b00000,
-	0b00000,
-	0b01110,
-	0b10001,
-	0b10001,
-	0b10001,
-	0b01110,
-	0b00000
-};
-
-unsigned char Thai_1[8] =
-{
-	0b00000,
-	0b00000,
-	0b01110,
-	0b10001,
-	0b11001,
-	0b00001,
-	0b01110,
-	0b00000
-};
-
-unsigned char Thai_2[8] =
-{
-	0b00000,
-	0b10000,
-	0b10110,
-	0b10101,
-	0b10001,
-	0b10001,
-	0b01110,
-	0b00000
-};
-
-unsigned char Thai_3[8] =
-{
-	0b00000,
-	0b00000,
-	0b01110,
-	0b10101,
-	0b10101,
-	0b10001,
-	0b11001,
-	0b00000
-};
-
-unsigned char Thai_4[8] =
-{
-	0b00000,
-	0b00001,
-	0b00110,
-	0b01000,
-	0b10010,
-	0b10100,
-	0b01111,
-	0b00000
-};
-
-
-unsigned char Thai_5[8] =
-{
-	0b00000,
-	0b01101,
-	0b01110,
-	0b01000,
-	0b10010,
-	0b10100,
-	0b01111,
-	0b00000
-};
-
-unsigned char Thai_6[8] =
-{
-	0b00000,
-	0b10110,
-	0b01001,
-	0b00001,
-	0b01101,
-	0b01001,
-	0b00110,
-	0b00000
-};
-
-
-unsigned char Thai_7[8] =
-{
-	0b00000,
-	0b00001,
-	0b01111,
-	0b10101,
-	0b10101,
-	0b10001,
-	0b11001,
-	0b00000
-};
-
-unsigned char Thai_8[8] =
-{
-	0b00000,
-	0b00001,
-	0b01110,
-	0b10000,
-	0b10001,
-	0b10101,
-	0b01110,
-	0b00000
-};
-
-unsigned char Thai_9[8] =
-{
-	0b00000,
-	0b00001,
-	0b01110,
-	0b11000,
-	0b10100,
-	0b10010,
-	0b11001,
-	0b00000
-};
 
 void LcdSend(unsigned char Data)
 {
